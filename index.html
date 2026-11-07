@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Xingwen Li (李幸文), Huawei HiSilicon · Turing. Research interests in 3D/4D scene reconstruction, multi-camera perception, efficient AI systems, and research agents.">
+    <meta name="description" content="Xingwen Li (李幸文), Huawei HiSilicon · Turing. Research interests in 3D/4D reconstruction, multi-camera perception, quantitative trading, and recursive self-improvement (RSI).">
     <meta name="theme-color" content="#f5f6f2">
     <meta property="og:title" content="Xingwen Li · Research">
-    <meta property="og:description" content="3D/4D scene reconstruction, multi-camera perception, efficient AI systems, and research agents. Huawei HiSilicon · Turing.">
+    <meta property="og:description" content="3D/4D scene reconstruction, multi-camera perception, quantitative trading, and recursive self-improvement (RSI). Huawei HiSilicon · Turing.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://followdeep.github.io/">
     <link rel="canonical" href="https://followdeep.github.io/">
@@ -39,7 +39,8 @@
         </a>
         <nav aria-label="Main navigation">
           <a href="#research">Research</a>
-          <a href="#current-work">Current work</a>
+          <a href="#current-work">SLARM</a>
+          <a href="#quant-rsi">Trading &amp; RSI</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -48,11 +49,11 @@
         <!-- 公开身份和研究方向集中在首屏，便于核对个人资料。 -->
         <section class="hero" aria-labelledby="name">
           <div class="hero-copy">
-            <p class="eyebrow">Spatial intelligence &amp; AI systems</p>
+            <p class="eyebrow">Spatial intelligence &amp; research agents</p>
             <h1 id="name">Xingwen Li <span lang="zh-Hans">李幸文</span></h1>
             <p class="affiliation">Huawei HiSilicon <span aria-hidden="true">·</span> Turing</p>
-            <p class="introduction">I study 3D/4D scene reconstruction and multi-camera perception for autonomous driving.</p>
-            <p class="bio">My current work explores feed-forward and streaming scene models, geometric conditioning, and efficient vision architectures. I also investigate tool-using agents and experimental feedback for research workflows.</p>
+            <p class="introduction">I study 3D/4D scene reconstruction, multi-camera perception, and AI agents for research and decision-making.</p>
+            <p class="bio">My current work spans feed-forward and streaming scene models, efficient vision architectures, and quantitative trading agents. I explore recursive self-improvement (RSI) through tool use, experience memory, and reproducible experiments.</p>
             <div class="profile-links">
               <a class="email-link" href="mailto:lixingwen5@huawei.com">lixingwen5@huawei.com <span aria-hidden="true">↗</span></a>
               <a href="https://github.com/followdeep">GitHub <span aria-hidden="true">↗</span></a>
@@ -94,7 +95,7 @@
         <section class="research-section" id="research" aria-labelledby="research-title">
           <div class="section-heading">
             <p class="eyebrow">Research interests</p>
-            <h2 id="research-title">Scene reconstruction<br>and intelligent systems.</h2>
+            <h2 id="research-title">Scene reconstruction<br>and research agents.</h2>
           </div>
           <div class="research-grid">
             <article class="research-item">
@@ -117,9 +118,9 @@
             </article>
             <article class="research-item">
               <span class="item-number" aria-hidden="true">04</span>
-              <h3>Agents for research</h3>
-              <p>Tool-using agents, agent-accessible perception services, and recursive self-improvement workflows grounded in experimental feedback and reproducible evaluation.</p>
-              <p class="topics">Tool use <span>·</span> Experimentation &amp; evaluation</p>
+              <h3>Quantitative trading &amp; RSI</h3>
+              <p>Quantitative trading as a setting for autonomous agents, including trading decisions, memory from experience, and recursive changes to the agent's own research and improvement methods.</p>
+              <p class="topics">Trading agents <span>·</span> Experimental evaluation</p>
             </article>
           </div>
         </section>
@@ -136,6 +137,23 @@
               <li>How can recurrent or looped computation improve scene reconstruction?</li>
               <li>How can models handle camera geometry consistently across views and time?</li>
               <li>How can agents use reconstructed scenes through explicit, verifiable tool interfaces?</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 量化交易条目聚焦研究机制和可复核的实验流程。 -->
+        <section class="current-section" id="quant-rsi" aria-labelledby="quant-title">
+          <div class="section-heading">
+            <p class="eyebrow">Quantitative research</p>
+            <h2 id="quant-title">Trading agents &amp;<br>recursive self-improvement.</h2>
+          </div>
+          <div class="current-content">
+            <p>I use quantitative trading to study agents that make sequential decisions from market observations and account feedback. My interests include hypothesis formation, memory linked to evidence, and the adaptation of entry, exit, and position-management rules.</p>
+            <p>My RSI work explores agents that revise their own research process, including which failures to investigate, how to design experiments, and how to generate and validate subsequent agent versions. The experimental infrastructure combines historical replay, Freqtrade-based simulated trading, versioned source inheritance, and traceable evaluation.</p>
+            <ul class="research-questions">
+              <li>How can an agent improve both its decisions and the methods it uses to develop future improvements?</li>
+              <li>How can historical replay support rapid experimentation while preserving causal information boundaries?</li>
+              <li>How should agent generations be compared under transaction costs, risk exposure, and unseen market conditions?</li>
             </ul>
           </div>
         </section>
