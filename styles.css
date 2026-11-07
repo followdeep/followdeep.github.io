@@ -1,0 +1,119 @@
+/* 基础排版和键盘访问。 */
+:root {
+  color-scheme: light;
+  --background: #f5f6f2;
+  --surface: #ebeee6;
+  --ink: #202c27;
+  --muted: #5d695f;
+  --accent: #275b46;
+  --line: #d9dfd3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-padding-top: 32px; }
+body { margin: 0; background: var(--background); color: var(--ink); line-height: 1.7; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+a:hover { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 2px; }
+p, h1, h2, h3 { margin: 0; }
+.page-shell { max-width: 1184px; padding: 0 52px; margin: 0 auto; }
+.skip-link { position: absolute; top: -80px; left: 20px; padding: 10px 16px; background: var(--ink); color: white; z-index: 5; }
+.skip-link:focus { top: 12px; color: white; }
+
+.site-header { display: flex; justify-content: space-between; align-items: center; min-height: 112px; gap: 24px; border-bottom: 1px solid var(--line); }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 15px; font-weight: 600; text-decoration: none; }
+.monogram { display: inline-grid; place-items: center; width: 35px; height: 35px; border: 1px solid var(--accent); color: var(--accent); font-size: 12px; letter-spacing: -0.5px; border-radius: 50%; }
+nav { display: flex; gap: 28px; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; text-decoration: none; color: var(--muted); }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.16em; line-height: 1.5; text-transform: uppercase; color: var(--accent); }
+
+/* 首屏保留完整公开身份，几何图形只承担视觉辅助。 */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 310px; align-items: center; gap: 50px; padding: 85px 0 90px; }
+h1 { margin-top: 24px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(45px, 5.3vw, 66px); line-height: 1.1; font-weight: 400; letter-spacing: -0.045em; }
+h1 span { display: inline-block; margin-left: 10px; font-family: "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 0.36em; font-weight: 400; letter-spacing: 0.04em; vertical-align: middle; color: var(--muted); }
+.affiliation { margin-top: 17px; font-size: 15px; color: var(--muted); }
+.affiliation span { padding: 0 5px; }
+.introduction { max-width: 610px; margin-top: 29px; font-size: 20px; line-height: 1.6; letter-spacing: -0.018em; }
+.bio { max-width: 620px; margin-top: 17px; font-size: 15px; color: var(--muted); }
+.profile-links { display: flex; flex-wrap: wrap; gap: 12px 27px; margin-top: 25px; font-size: 13px; }
+.profile-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; text-decoration: none; }
+.profile-links .email-link { text-decoration: underline; }
+.geometry-art { width: 100%; padding-top: 20px; }
+.geometry-art svg { display: block; width: 100%; }
+
+.research-section, .current-section { padding: 54px 0 62px; border-top: 1px solid var(--line); }
+.section-heading { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 40px; align-items: start; }
+.section-heading .eyebrow { padding-top: 7px; }
+h2 { font-family: Georgia, "Times New Roman", serif; font-size: 32px; line-height: 1.25; font-weight: 400; letter-spacing: -0.025em; }
+.research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 52px; margin-top: 40px; }
+.research-item { padding: 24px 0 0; border-top: 1px solid var(--line); }
+.item-number { font-family: Georgia, "Times New Roman", serif; font-size: 13px; color: #82927d; }
+h3 { margin-top: 8px; font-size: 17px; line-height: 1.45; font-weight: 550; letter-spacing: -0.02em; }
+.research-item > p:not(.topics) { margin-top: 12px; max-width: 470px; font-size: 14px; color: var(--muted); }
+.topics { margin-top: 17px; font-size: 11px; color: var(--accent); }
+.topics span { padding: 0 6px; color: #94a08e; }
+
+.current-section { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 40px; }
+.current-section .section-heading { display: block; }
+.current-section h2 { margin-top: 18px; font-size: 28px; }
+.current-content { font-size: 15px; color: var(--muted); }
+.text-link { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; margin-top: 10px; color: var(--accent); font-size: 13px; }
+.research-questions { padding: 0; margin: 25px 0 0; list-style: none; }
+.research-questions li { position: relative; padding: 11px 0 11px 20px; border-top: 1px solid var(--line); font-size: 13px; }
+.research-questions li::before { position: absolute; left: 0; content: "↗"; color: var(--accent); }
+
+.contact-section { display: flex; justify-content: space-between; gap: 36px; align-items: center; padding: 37px 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; }
+.contact-section h2 { margin-top: 11px; font-size: 30px; }
+.contact-affiliation { margin-top: 9px; font-size: 13px; color: var(--muted); }
+.contact-links { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.contact-links a { display: inline-flex; gap: 16px; align-items: center; min-height: 44px; font-size: 14px; }
+.site-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 32px 0; color: var(--muted); font-size: 11px; }
+.site-footer a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; text-decoration: none; }
+.site-footer [lang="zh-Hans"] { margin-left: 4px; }
+
+/* 窄屏采用单列布局，确保导航和邮箱始终可操作。 */
+@media (max-width: 940px) {
+  .page-shell { padding: 0 32px; }
+  .hero { grid-template-columns: minmax(0, 1fr) 225px; gap: 22px; padding: 64px 0 68px; }
+  .section-heading, .current-section { grid-template-columns: 180px minmax(0, 1fr); gap: 28px; }
+  .research-grid { gap: 30px 32px; }
+  .contact-section { padding: 30px; }
+}
+
+@media (max-width: 680px) {
+  .page-shell { padding: 0 22px; }
+  .site-header { min-height: 100px; flex-wrap: wrap; gap: 6px 20px; padding: 20px 0 12px; }
+  .wordmark { font-size: 14px; }
+  .monogram { width: 30px; height: 30px; }
+  nav { width: 100%; justify-content: space-between; gap: 14px; }
+  nav a { font-size: 12px; }
+  .hero { display: block; position: relative; padding: 48px 0 52px; }
+  h1 { font-size: 48px; margin-top: 20px; }
+  h1 span { margin-left: 6px; }
+  .affiliation { font-size: 14px; }
+  .introduction { font-size: 19px; margin-top: 25px; }
+  .bio { font-size: 14px; }
+  .profile-links { gap: 6px 22px; margin-top: 20px; }
+  .geometry-art { max-width: 195px; margin: 20px auto -12px; padding: 0; }
+  .research-section, .current-section { padding: 36px 0 42px; }
+  .section-heading { display: block; }
+  .section-heading h2 { margin-top: 17px; }
+  h2 { font-size: 29px; }
+  .research-grid { grid-template-columns: minmax(0, 1fr); margin-top: 28px; gap: 25px; }
+  .research-item { padding-top: 20px; }
+  .current-section { display: block; }
+  .current-content { margin-top: 23px; font-size: 14px; }
+  .contact-section { display: block; padding: 28px 23px; }
+  .contact-links { margin-top: 20px; }
+  .contact-links a { font-size: 13px; gap: 10px; }
+  .site-footer { align-items: flex-start; padding: 25px 0; }
+  .site-footer > span { padding-top: 12px; }
+}
+
+@media (max-width: 360px) {
+  .page-shell { padding: 0 18px; }
+  h1 { font-size: 42px; }
+  .contact-section { padding: 25px 18px; }
+  .contact-links a { font-size: 12px; }
+}
